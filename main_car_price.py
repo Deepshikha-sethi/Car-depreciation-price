@@ -20,7 +20,7 @@ if st.checkbox("Show raw data"):
     st.write(data)
 
 # Extract features and target variable
-X = data[['age']]
+X = data[['age','Fuel type']]
 y = data['Price']
 
 # Train-test split
