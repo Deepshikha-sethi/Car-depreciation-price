@@ -20,7 +20,7 @@ if st.checkbox("Show raw data"):
     st.write(data)
 
 # Extract features and target variable
-X = data[['age','Fuel type']]
+X = data[['age']]
 y = data['Price']
 
 # Train-test split
@@ -38,10 +38,4 @@ if st.button("Predict Price"):
     pred_price = model.predict([[age_of_car]])
     st.success(f"Predicted price: ₹{pred_price[0]:,.2f}")
 
-# Evaluate the model
-if st.button("Evaluate the Model"):
-    y_pred = model.predict(X_test)
-    mse = mean_squared_error(y_test, y_pred)
-    r2 = r2_score(y_test, y_pred)
-    st.write(f"**Mean Squared Error:** {mse:.2f}")
-    st.write(f"**R-squared Score:** {r2:.2f}")
+
